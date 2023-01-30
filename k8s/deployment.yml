@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: movie-microservice
+spec:
+  selector:
+    matchLabels:
+      app: movie-microservice
+  template:
+    metadata:
+      labels:
+        app: movie-microservice
+    spec:
+      containers:
+        - name: movie-service
+          image: jayasith98/movie-microservice
+          resources:
+            limits:
+              memory: "512Mi"
+              cpu: "500m"
+          ports:
+            - containerPort: 9090
