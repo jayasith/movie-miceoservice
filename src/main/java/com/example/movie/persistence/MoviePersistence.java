@@ -32,7 +32,7 @@ public class MoviePersistence {
     }
 
     public void addMovie(MovieRequest request) {
-        Optional<Category> categories = categoryRepository.findByName(request.getName());
+        Optional<Category> categories = categoryRepository.findById(request.getCategoryId());
         Category category;
         category = categories.orElseGet(() -> Category.builder()
                 .name(request.getName())
@@ -49,7 +49,7 @@ public class MoviePersistence {
 
     public void update(MovieRequest request) {
         Optional<Movie> movie = movieRepository.findByName(request.getName());
-        Optional<Category> category = categoryRepository.findByName(request.getCategory().getName());
+        Optional<Category> category = categoryRepository.findById(request.getCategoryId());
 
         Movie updatedMovie = Movie.builder()
                 .id(movie.get().getId())

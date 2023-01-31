@@ -15,6 +15,6 @@ public class MovieRequest {
     private String name;
     private String description;
     private String imageUrl;
-    private CategoryRequest category;
+    private Long categoryId;
 
 }

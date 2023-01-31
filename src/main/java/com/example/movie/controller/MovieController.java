@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("app/v0.1/movie")
+@RequestMapping("api/v0.1/product/movie")
 public class MovieController {
 
     private final MovieService service;
